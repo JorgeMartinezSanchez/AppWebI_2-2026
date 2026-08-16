@@ -8,6 +8,8 @@ RUN pip install flask
 
 COPY config/ /site_config/
 
+VOLUME /site_config
+
 EXPOSE 5000
 
 CMD ["python3", "/site_config/main.py"]
