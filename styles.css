@@ -4,11 +4,15 @@
     flex-direction: column;
 }
 
-.about{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    text-align: center;
-    padding: 50px 20px;
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.about_card {
+  flex: 1 1 300px;
+  max-width: 350px;
 }
