@@ -1,4 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .hero_content{
+    color: black;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -15,4 +21,15 @@
 .about_card {
   flex: 1 1 300px;
   max-width: 350px;
+}
+
+section, footer{
+    background-color: rgb(219, 219, 219);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer{
+    color: black;
 }
