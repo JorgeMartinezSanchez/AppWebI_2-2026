@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -6,8 +7,7 @@ from database.models.models import Base, Food
 
 app = Flask(__name__)
 
-
-engine = create_engine("postgresql+psycopg2://usuario:password@localhost/madyumyum_restaurant_db")
+engine = create_engine(os.environ["DATABASE_URL"])
 Session = sessionmaker(bind=engine)
 
 Base.metadata.create_all(engine)

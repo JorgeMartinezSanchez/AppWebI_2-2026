@@ -1,36 +1,44 @@
-service:
+services:
   flask-backend:
-    build: ./config
+    build: ./app
     ports:
       - "5000:5000"
     environment:
       - DATABASE_URL=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - default
 
   db:
-    image: postgres:latest
+    image: postgres:16
     env_file:
       - .env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-      - ./schema.ddl:/docker-entrypoint-initdb.d/schema.ddl
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     networks:
       - default
-  
+
   django:
-    build: ./django_app
+    build: ./django_admin
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_SETTINGS_MODULE=django_app.settings
+      - DJANGO_SETTINGS_MODULE=mmy_admin.settings
       - DATABASE_URL=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - default
 

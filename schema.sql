@@ -1,7 +1,3 @@
-CREATE DATABASE madyumyum_restaurant_db;
-
-\c madyumyum_restaurant_db;
-
 CREATE SCHEMA IF NOT EXISTS content;
 
 CREATE TABLE content.customer (
