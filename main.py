@@ -1,5 +1,5 @@
 import os
-from flask import render_template, request, redirect, url_for, flash, abort
+from flask import Flask, render_template, request, redirect, url_for, flash, abort
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
