@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Mis Tareas</h1>
+
+<ul>
+  {% for todo in todos %}
+    <li>
+      <span>{{ todo.title }}</span>
+      <form method="post" action="{{ url_for('todos.delete', todo_id=todo.id) }}" style="display:inline;">
+        <button type="submit">Eliminar</button>
+      </form>
+    </li>
+  {% else %}
+    <li>No hay tareas pendientes.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

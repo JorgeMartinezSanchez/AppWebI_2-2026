@@ -1,0 +1,166 @@
+Traceback (most recent call last):
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 1290, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/bin/flask", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/flask/cli.py", line 1131, in main
+    cli.main()
+    ~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/core.py", line 1552, in main
+    rv = self.invoke(ctx)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/core.py", line 2032, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/core.py", line 2032, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/core.py", line 1415, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/core.py", line 910, in invoke
+    return callback(*args, **kwargs)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/flask/cli.py", line 400, in decorator
+    return ctx.invoke(f, *args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/click/core.py", line 910, in invoke
+    return callback(*args, **kwargs)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/flask_migrate/cli.py", line 157, in upgrade
+    _upgrade(directory or g.directory, revision, sql, tag, x_arg or g.x_arg)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/flask_migrate/__init__.py", line 111, in wrapped
+    f(*args, **kwargs)
+    ~^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/flask_migrate/__init__.py", line 200, in upgrade
+    command.upgrade(config, revision, sql=sql, tag=tag)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/alembic/command.py", line 487, in upgrade
+    script.run_env()
+    ~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/alembic/script/base.py", line 550, in run_env
+    util.load_python_file(self.dir, "env.py")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/alembic/util/pyfiles.py", line 114, in load_python_file
+    module = load_module_py(module_id, path)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/alembic/util/pyfiles.py", line 132, in load_module_py
+    spec.loader.exec_module(module)  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/Semana_8/todoapp/migrations/env.py", line 113, in <module>
+    run_migrations_online()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/Semana_8/todoapp/migrations/env.py", line 99, in run_migrations_online
+    with connectable.connect() as connection:
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3295, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 2450, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 1290, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/jorge_ms/University/UCB/2-2026/Aplicaciones Web I/.AppWebI_python_venv/lib/python3.14/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
