@@ -103,7 +103,9 @@ def crear_restaurante():
             db.session.add(nuevo_restaurante)
             db.session.commit()
             flash('¡Restaurante creado con éxito!', 'success')
+
             # Patrón Post/Redirect/Get para evitar duplicados con F5
+            
             return redirect(url_for('listar_restaurantes'))
         except Exception as e:
             db.session.rollback()
