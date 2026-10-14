@@ -1,3 +1,7 @@
 Flask
 Flask-SQLAlchemy
 psycopg[binary]
+
+# nuevo
+PyJWT==2.15.1
+SQLAlchemy==2.0.54

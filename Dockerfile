@@ -3,6 +3,6 @@ WORKDIR /app
 # Las dependencias primero: si no cambian, Docker reutiliza esta capa
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
+COPY ./app .
 EXPOSE 8000
-CMD ["python", "main.py"]
+CMD ["python", "app/main.py"]

@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     'DATABASE_URL',
-    'postgresql://postgres:una_clave_propia@localhost:5432/lacarta'
+    'postgresql://postgres:postgresUltraPowerfulPAssword67@localhost:5432/lacarta'
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
